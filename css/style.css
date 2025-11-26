@@ -1,0 +1,267 @@
+:root {
+    --color-bg: #202020;
+    --color-text: #E8E8ED;
+    --color-accent: #ffd600;
+    --color-hover: #313236;
+    --linkedin-color: #ffd600;          /* Couleur mode sombre */
+    --linkedin-hover: #E8E8ED;
+    --theme-btn-bg: #313236;
+    --theme-btn-bg-hover: #ffd600;
+    --icon-color: #E8E8ED;
+    --icon-color-hover: #ffd600;
+}
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+body.light {
+    --color-bg: #E8E8ED;
+    --color-text: #202020;
+    --color-accent: #6665DD;
+    --color-hover: #e9e9e9;
+    --linkedin-color: #473BF0;          /* Couleur mode clair */
+    --linkedin-hover: #202020;
+    --theme-btn-bg: #e0e0e0;
+    --theme-btn-bg-hover: #006699;
+    --icon-color: #202020;
+    --icon-color-hover: #6665DD;
+}
+header {
+    padding: 2rem 0 0 0; /* Ajoute un peu d'espace au-dessus */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav {
+    width: 100%;
+    max-width: 750px; /* Pour centrer aussi la nav et ne pas la faire trop large */
+    margin-top: 5rem;  /* Décaler vers le bas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+}
+#theme-toggle .icon-sun,
+#theme-toggle .icon-moon {
+    display: inline-block;
+}
+
+#theme-toggle .icon-moon { display: none; }
+body.light #theme-toggle .icon-sun { display: none; }
+body.light #theme-toggle .icon-moon { display: inline-block; }
+
+/* Couleur de base */
+#theme-toggle svg {
+    color: var(--icon-color);
+    width: 22px;
+    height: 22px;
+    transition: color 0.2s;
+    display: block;
+}
+
+/* Couleur au hover */
+#theme-toggle:hover svg {
+    color: var(--icon-color-hover);
+}
+.linkedin-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    filter: grayscale(0);
+    transition: filter 0.2s;
+}
+.linkedin-link .linkedin-icon {
+    color: var(--linkedin-color-dark); /* couleur par défaut, sombre */
+    transition: color 0.2s;
+}
+
+body.light .linkedin-link .linkedin-icon {
+    color: var(--linkedin-color-light);   /* couleur pour le mode clair */
+}
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.centered {
+    margin: 3rem auto;
+    text-align: center;
+    max-width: 700px; /* Plus étroit qu'avant */
+    width: 100%;
+    box-sizing: border-box;
+}
+h1, h2 {
+    margin: 1.2rem 0 0.8rem;
+}
+.profile-image {
+    display: block;
+    margin: 2rem auto 0 auto;
+
+    max-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+}
+.bio-list {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.bio-list ul {
+    text-align: left;
+}
+li {
+    margin-bottom: 0.3em;
+}
+section {
+    transition: background 0.2s;
+}
+a, button {
+    transition: color 0.2s, background 0.2s;
+}
+.nav-actions a {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    display: inline-block;
+}
+.linkedin-link svg {
+    color: var(--linkedin-color);
+    transition: color 0.2s;
+}
+
+.linkedin-link:hover svg {
+    color: var(--linkedin-hover);
+}
+.texteAlignLeft {
+    text-align: left;
+    font-size: 18px;
+}
+
+.projets-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 4rem auto 0 auto;
+    text-align: center;
+}
+
+.projets-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.projets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.projet-card {
+    background: var(--color-bg, #222);
+    color: var(--color-text, #fff);
+    border-radius: 25px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    padding: 1.5rem 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.projet-card:hover {
+    box-shadow: 0 4px 28px rgba(0,0,0,0.22);
+    transform: scale(1.025);
+}
+
+.projet-titre {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 0.55rem;
+}
+
+.projet-desc {
+    font-size: 1em;
+    margin-bottom: 1.2rem;
+    color: var(--color-text, #eee);
+}
+
+.projet-lien {
+    margin-left: auto;
+    text-decoration: none;
+    color: var(--color-accent, #ffd600);
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 0.4em 1.1em;
+    border-radius: 12px;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+}
+
+.projet-lien:hover {
+    background: var(--color-accent, #ffd600);
+    color: var(--color-bg, #222);
+}
+
+@media (max-width: 700px) {
+    .projets-section, .projets-list, .projet-card {
+        max-width: 96vw;
+        padding: 1.2rem;
+    }
+}
+
+.nav-links a {
+    color: var(--color-text, #fff);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.45em 1.2em;
+    border-radius: 12px;
+    background: transparent;
+    transition: background 0.22s, color 0.18s;
+    margin: 0 0.25em;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    background: var(--color-accent, #ffd600);
+    color: var(--color-bg, #222);
+}
+
+.traceProjet {
+    display: block;
+    margin: 1.2rem auto; /* centre horizontalement */
+    max-width: 100%;
+    border-radius: 18px; /* optionnel, arrondis les bords */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); /* effet ombre léger */
+}
