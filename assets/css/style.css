@@ -593,11 +593,23 @@ button:hover,
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     nav {
-        justify-content: space-around;
+        justify-content: space-between;
+        /* Ensure spacing */
+        padding: 0 1rem;
+        /* Add padding for better edge spacing */
     }
 
     .nav-links {
         width: 60%;
+    }
+
+    /* Swap Burger and Actions */
+    .burger {
+        order: 1;
+    }
+
+    .nav-actions {
+        order: 2;
     }
 }
 
@@ -1120,4 +1132,566 @@ nav {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* --- New Index Page Redesign --- */
+
+/* General Section Styling */
+main section {
+    padding: 4rem 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.section-line {
+    width: 60px;
+    height: 4px;
+    background: var(--color-accent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding-top: 0;
+    /* Adjust for header */
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 214, 0, 0.3);
+}
+
+.btn-secondary {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 214, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.abstract-shape {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, var(--color-accent), transparent);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: morph 8s ease-in-out infinite;
+    opacity: 0.2;
+    filter: blur(40px);
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    50% {
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
+
+/* About & Stats Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--color-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-accent);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+/* Timeline Section */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    z-index: 1;
+    box-shadow: 0 0 0 4px var(--color-bg);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.timeline-content p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* CV Section */
+.cv-section {
+    text-align: center;
+}
+
+.cv-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    padding: 4rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-dot {
+        left: 21px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 21px;
+    }
+}
+
+/* --- Modernized Content Styles --- */
+
+.content-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-accent);
+}
+
+.career-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+}
+
+.card-line {
+    width: 40px;
+    height: 3px;
+    background: var(--color-text);
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+.cv-container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iframe-center {
+    border-radius: 15px;
+    border: none;
+    background: #fff;
+    /* Ensure PDF background is white if transparent */
+}
+
+/* Responsive adjustments for new content */
+@media (max-width: 900px) {
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-card {
+        padding: 1.5rem;
+    }
+}
+
+/* --- Mobile & Layout Refinements --- */
+
+/* Fix Horizontal Scroll */
+/* Fix Horizontal Scroll */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Ensure main container doesn't overflow */
+main {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Improve Mobile Interface */
+@media (max-width: 768px) {
+
+    /* Adjust padding for content cards on mobile */
+    .content-card,
+    .cv-container {
+        padding: 1.5rem;
+    }
+
+    /* Adjust font sizes for mobile */
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .texteAlignLeft {
+        font-size: 1rem;
+        /* Slightly smaller text on mobile for better readability */
+    }
+
+    /* Ensure CV iframe doesn't break layout */
+    .iframe-center {
+        height: 500px;
+        /* Reduce height on mobile */
+    }
+
+    /* Adjust Hero Section for Mobile */
+    .hero-title {
+        font-size: 2.5rem;
+        /* Smaller hero title */
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    /* Ensure abstract shape doesn't cause overflow */
+    .abstract-shape {
+        width: 300px;
+        height: 300px;
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .content-card,
+    .cv-container {
+        padding: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+/* --- Project Gallery Styles --- */
+.project-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    /* Center and add top margin */
+    max-width: 800px;
+    /* Match paragraph width */
+    width: 100%;
+}
+
+.gallery-item {
+    flex: 1;
+    min-width: 300px;
+    /* Wrap on small screens */
+    text-align: center;
+}
+
+.gallery-item h3 {
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.gallery-item img {
+    width: 100%;
+    /* Fill the container */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: translateY(-5px);
+}
+
+/* Light Theme Button Hover Fix */
+body.light .btn-secondary:hover {
+    background: rgba(102, 101, 221, 0.1);
+    /* Visible hover background */
+    color: var(--color-accent);
+}
+
+/* Refined Typography & Layout */
+.texteAlignLeft {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-header h2 {
+    font-size: 1.4rem;
+    /* Reduced to prevent wrapping */
+}
+
+/* Fix h2 lines alignment */
+h2 {
+    display: inline-block;
+    /* Ensure line aligns with text */
+    margin-bottom: 1rem;
+}
+
+/* Darker background shape in light mode */
+body.light .abstract-shape {
+    opacity: 0.5;
+    filter: blur(30px);
+    /* Slightly less blur for visibility */
 }
