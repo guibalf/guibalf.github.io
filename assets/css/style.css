@@ -804,10 +804,99 @@ button:hover,
     text-decoration: none;
     font-weight: 500;
     transition: background 0.2s, transform 0.2s;
-    margin-top: auto;
+    margin: 2rem auto;
     /* Pushes button to bottom of container if needed */
     align-self: flex-start;
 }
+
+.competences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.competence-card {
+    background: var(--color-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.competence-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-accent);
+}
+
+.competence-header {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.competence-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.competence-card.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.competence-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.competence-card.active .competence-content {
+    max-height: 2000px;
+    /* Arbitrary large height */
+    transition: max-height 0.5s ease-in;
+}
+
+.competence-inner {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.competence-inner p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.competence-inner img {
+    margin-bottom: 1rem;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.competence-sub-title {
+    margin: 1.5rem 0 0.5rem 0;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.competence-sub-title:first-of-type {
+    margin-top: 0;
+}
+
+
 
 .btn-download:hover {
     background: rgba(255, 255, 255, 0.2);
