@@ -862,7 +862,7 @@ button:hover,
 }
 
 .competence-card.active .competence-content {
-    max-height: 2000px;
+    max-height: 10000px;
     /* Arbitrary large height */
     transition: max-height 0.5s ease-in;
 }
@@ -879,10 +879,19 @@ button:hover,
 }
 
 .competence-inner img {
-    margin-bottom: 1rem;
-    max-width: 100%;
+    margin: 1.5rem auto;
+    display: block;
+    max-width: 60%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ac-title {
+    color: var(--color-accent);
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .competence-sub-title {

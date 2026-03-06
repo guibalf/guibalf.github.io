@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Guibal Florian - Projet 3</title>
-    <script src="assets/js/theme-init.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Guibal Florian - Projet 1</title>
+    <script src="js/theme-init.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="projets.html">Projets</a></li>
                 <li><a href="competences.html">Portfolio d'apprentissage</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -69,76 +69,60 @@
     </header>
     <main>
         <section class="centered">
-            <h1>Game Jam : Développement d'un clicker game</h1>
+            <h1>Développement d’un jeu de cartes Pokémon TCG</h1>
             <div>
                 <div>
                     <h2>Contexte du projet</h2>
                     <p class="texteAlignLeft">
-                        Ce projet a été réalisé en équipe de quatre
-                        lors d’une Game Jam organisée par mon IUT, sur
-                        le thème « Fête des clics ». Nous étions initialement
-                        partis sur un jeu de survie 2D avec des vagues d’ennemis
-                        dans une ambiance de fête, où il fallait cliquer sur les
-                        ennemis pour leur infliger des dégâts. Cependant, nous
-                        avons passé trop de temps à configurer Unity et à le prendre
-                        en main, ce qui nous a contraints à revoir nos ambitions.
-                        Nous avons alors réorienté le concept vers un jeu de type
-                        clicker, inspiré de Cookie Clicker, toujours sur le thème de
-                        la fête, afin de proposer une expérience jouable et aboutie
-                        dans le temps imparti
+                        Ce projet académique a été réalisé en binôme. Il s’est déroulé sur deux mois :
+                        un mois dédié au développement du code métier puis un mois consacré à la création
+                        de l’interface graphique. Les seules contraintes imposées étaient l’utilisation
+                        de Java pour la logique applicative et JavaFX pour l’interface. L’objectif était
+                        de reproduire une version jouable du jeu de cartes Pokémon TCG en intégrant les
+                        règles essentielles, les attaques des cartes et une interface permettant de jouer
+                        des parties complètes.
                     </p>
                     <h2>Contribution personnelle</h2>
                     <p class="texteAlignLeft">
-                        J’ai principalement travaillé sur la conception et l’implémentation
-                        du système d’améliorations ainsi que sur la mécanique de
-                        renaissance (reset avec bonus). J’ai également participé activement
-                        aux phases de test afin d'affiner la courbe de difficulté. En quelques
-                        sortes, on peut dire que j’ai aussi eu un rôle de bêta-testeur, en
-                        identifiant les déséquilibres et en proposant des ajustements pour
-                        optimiser au mieux l’expérience de jeu.
+                        Ma contribution s’élève à environ 55 % du projet. J’ai développé près de 90 tests
+                        unitaires afin de garantir la cohérence du système de jeu, notamment la gestion des
+                        attaques et des effets de cartes. J’ai également implémenté un grand nombre de
+                        méthodes liées aux attaques des différents Pokémon.
+                        Sur la partie interface, je me suis particulièrement investi dans la mise en place
+                        des bindings JavaFX, dans le but de proposer une expérience utilisateur fluide et
+                        agréable. J’ai participé aux décisions concernant l’organisation des éléments graphiques
+                        et la structure globale de l’application.
                     </p>
                     <h2>Ce que j’ai appris</h2>
                     <p class="texteAlignLeft">
-                        Ce projet m’a permis de renforcer mes compétences en JavaScript,
-                        notamment à travers les mécaniques que j'ai développé. J’ai
-                        également développé mon analyse critique en testant à plusieurs
-                        reprises notre jeu, en identifiant les éléments qui ne
-                        fonctionnaient pas comme prévu et en proposant des ajustements
-                        pour améliorer l’équilibrage et l’expérience globale.
-                    </p>
-                    <h2>Lien du projet</h2>
-                    <p class="texteAlignLeft">
-                        Vous pouvez tester le jeu en cliquant <a
-                            href="https://webinfo.iutmontp.univ-montp2.fr/~guibalf/cliquer/">ici</a>.
+                        Ce projet m’a permis d’approfondir mes compétences en JavaFX, notamment autour des
+                        concepts de bindings, de gestion d’événements et de structuration d’une interface
+                        réactive. J’ai également renforcé ma capacité à travailler en équipe : la présence
+                        d’une interface graphique impliquait de nouveaux choix visuels et ergonomiques, ce
+                        qui m’a appris à défendre mes propositions, à écouter celles de mon binôme et à
+                        construire des décisions communes cohérentes. Enfin, le développement de tests unitaires
+                        m’a sensibilisé à l’importance de la qualité logicielle et de la validation systématique
+                        du comportement métier.
                     </p>
                     <h2>Traces du Projet</h2>
                     <div class="project-gallery">
                         <div class="gallery-item">
-                            <h3>Système de clics</h3>
-                            <img class="traceProjet" src="assets/img/projets/projet5/projet5_SystemeClic.gif"
-                                alt="screen du projet - système de clics">
+                            <h3>Fenêtre lors du lancement</h3>
+                            <img class="traceProjet" src="../ressources/img/projets/projet1/projet1_FenetreLancement.png"
+                                alt="screen du projet - fenetre lors du lancement">
                         </div>
-                    </div>
-                    <div class="project-gallery">
                         <div class="gallery-item">
-                            <h3>Système d'achat d'améliorations</h3>
-                            <img class="traceProjet" src="assets/img/projets/projet5/projet5_SystemeAmelioration.gif"
-                                alt="screen du projet - système d'achat d'améliorations">
-                        </div>
-                    </div>
-                    <div class="project-gallery">
-                        <div class="gallery-item">
-                            <h3>Mécanique de renaissance et de points de Prestige</h3>
-                            <img class="traceProjet" src="assets/img/projets/projet5/projet5_SystemeRebirth.gif"
-                                alt="screen du projet - mécanique de renaissance et de points de Prestige">
+                            <h3>Video d'un court gameplay</h3>
+                            <img class="traceProjet" src="../ressources/img/projets/projet1/projet1_Gameplay.gif"
+                                alt="screen du projet - vidéo d'un court gameplay">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/menu.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
