@@ -45,3 +45,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// --- Scroll To Top functionality ---
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.id = 'scroll-to-top';
+    scrollToTopBtn.setAttribute('aria-label', 'Remonter en haut de la page');
+    
+    scrollToTopBtn.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    `;
+    
+    document.body.appendChild(scrollToTopBtn);
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
